@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouser efect</title>
+    <link rel="stylesheet" href="Mousehover.css">
+</head>
+<body>
+<script>
+
+    document.addEventListener('mousemove' ,function(e){
+    let body=document.querySelector('body');
+    let object=document.createElement('span');
+    let x =  e.offsetX;
+    let y =  e.offsetY;
+    object.style.left= x+'px';
+    object.style.top= y+'px' ;
+
+    let size =Math.random() * 80; 
+    object.style.width=20 + size +'px';
+    object.style.height=20 + size +'px';
+
+    let tranform =Math.random() *360;
+    object.style.transform= 'rotate('+tranform+'deg)'
+
+    body.appendChild(object);
+
+    setTimeout(function(){
+        object.remove();
+    },1000)
+})
+</script>
+
+</body>
+</html>
